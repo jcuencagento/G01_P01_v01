@@ -1,5 +1,12 @@
 package model;
 
+/**
+ * Clase principal de Control del proyecto
+ * 
+ * @author Grupo 01
+ *
+ */
+
 public class Juegos {
 	
 	private String nombre;

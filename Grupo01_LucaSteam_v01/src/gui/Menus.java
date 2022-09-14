@@ -1,5 +1,11 @@
 package gui;
 
+
+/**
+ * 
+ * @author Grupo1
+ *
+ */
 public class Menus {
 
 	public static void menuInicial() {

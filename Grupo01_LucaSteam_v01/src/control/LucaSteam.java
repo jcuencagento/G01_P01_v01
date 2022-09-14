@@ -89,6 +89,11 @@ public class LucaSteam {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion ")) {
 		
+		//IMPRIMIR POR PLATAFORMA
+		case 1:
+			serv.imprimirListaPorCategoria();
+			break;
+		
 		// LISTADO JUEGOS
 		case 2:
 			serv.imprimirListaJuegos();

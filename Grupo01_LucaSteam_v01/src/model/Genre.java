@@ -82,10 +82,7 @@ public enum Genre {
 			
 		}
 		default:
-			System.out.println("No es un genero valido.");
-			break;
+			return null;
 		}
-		
-		return g;
 	}
 }

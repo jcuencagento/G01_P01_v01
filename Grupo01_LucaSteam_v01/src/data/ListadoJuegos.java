@@ -34,13 +34,17 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	}
 
 	
-	public void imprimirListaPorCategoria(Genre g) {
+	public String imprimirListaPorCategoria(Genre g) {
 		for (Juegos j: listaJuegos) {
 			if(j.getGenero().equals(g)) {
-				System.out.println(j.toString());
+				return j.toString();
+				// He buscado en internet cómo se hacen las pruebas de métodos void 
+				// y parece que no se puede hacerlas, por eso he cambiado un poco
+				// este método para que devuelva un valor para poder hacer 
+				// pruebas con ella co
 			}
 		}
-		
+		return null;
 	}
 
 }

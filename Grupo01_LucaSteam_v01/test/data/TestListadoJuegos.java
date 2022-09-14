@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Genre;
+
 
 
 public class TestListadoJuegos {
@@ -64,5 +66,23 @@ public class TestListadoJuegos {
 	public void testImprimirListaPorCategoriaVacio() {
 		logger.warn("Test::testImprimirListaPorCategoriaVacio(): []");
 	}	
+	
+	@Test
+	public void testImprimirListaPorCategoriaPlatform() {
+		logger.warn("Test::testImprimirListaPorCategoriaPlatform(): []");
+		Genre g = Genre.PLATAFORMA;
+		Assert.assertNotNull(g);
+		//(ListadoJuegos.imprimirListaPorCategoria(g));
+	}
+	
+	@Test
+	public void testImprimirListaPorCategoriaPlataformaIgualAAccion() {
+		logger.warn("Test::testImprimirListaPorCategoriaPlataformaIgualAAccion(): []");
+		Genre gP = Genre.PLATAFORMA;
+		Genre gA = Genre.ACCION;
+		Assert.assertNotEquals(gP,gA);
+		//(ListadoJuegos.imprimirListaPorCategoria(g));
+	}
+	
 	
 }

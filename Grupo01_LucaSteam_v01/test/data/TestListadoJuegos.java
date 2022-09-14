@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.Genre;
+import model.Juegos;
 
 
 
@@ -54,14 +55,18 @@ public class TestListadoJuegos {
 	 * 
 	 */
 
+	
 	@Test
 	public void testAltaJuegoVacio() {
-		logger.warn("Test::testAltaJuegoVacio(): []");
-		
-		
-		Assert.assertEquals("hola", "hola");
+		logger.info("Test::testAltaJuegoVacio(): []");
+		Juegos j = Juegos.creadorJuegos("Prueba","PC", 1620, "Hola", "Publis");
+		ListadoJuegos listaJuegos1 = new ListadoJuegos();
+		ListadoJuegos listaJuegos2 = new ListadoJuegos();
+		listaJuegos1.altaJuego(j);
+		Assert.assertEquals(listaJuegos1.listaJuegos,listaJuegos2.listaJuegos);
 	}
-	
+
+	/*
 	@Test
 	public void testImprimirListaPorCategoriaVacio() {
 		logger.warn("Test::testImprimirListaPorCategoriaVacio(): []");
@@ -71,8 +76,7 @@ public class TestListadoJuegos {
 	public void testImprimirListaPorCategoriaPlatform() {
 		logger.warn("Test::testImprimirListaPorCategoriaPlatform(): []");
 		Genre g = Genre.PLATAFORMA;
-		Assert.assertNotNull(g);
-		//(ListadoJuegos.imprimirListaPorCategoria(g));
+		new ListadoJuegos().imprimirListaPorCategoria(g);
 	}
 	
 	@Test
@@ -83,6 +87,7 @@ public class TestListadoJuegos {
 		Assert.assertNotEquals(gP,gA);
 		//(ListadoJuegos.imprimirListaPorCategoria(g));
 	}
+	*/
 	
 	
 }

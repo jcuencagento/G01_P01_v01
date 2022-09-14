@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		LucaSteam ls = new LucaSteam();
-		
+		System.out.println("Hola mundo");
 		
 		System.out.println("Bienvenido al administrador de LucaSteam!");
 		ls.entro();

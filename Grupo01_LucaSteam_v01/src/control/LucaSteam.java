@@ -18,7 +18,7 @@ public class LucaSteam {
 	// MENU PRINCIPAL
 	public void entro() {
 		serv.listaJuegosInicial(); // METEMOS LOS JUEGOS NADA MAS ENTRAR
-		serv.imprimirListaJuegos();
+		System.out.println("La lista de juegos ha sido creada.");
 		boolean sigue = true;
 		while (sigue) {
 			Menus.menuInicial();

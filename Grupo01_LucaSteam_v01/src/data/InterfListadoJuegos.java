@@ -1,5 +1,7 @@
 package data;
 
+import model.Juegos;
+
 public interface InterfListadoJuegos {
 	
 	//INTRODUCCION DE LOS JUEGOS DEL CSV AL EMPEZAR
@@ -7,4 +9,6 @@ public interface InterfListadoJuegos {
 	
 	public void imprimirListaJuegos();
 
+	
+	public void altaJuego(Juegos j);
 }

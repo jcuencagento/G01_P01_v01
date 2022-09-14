@@ -46,6 +46,7 @@ public class SacoFichero {
 		
 		try {
 			File file = buscar(archivo, Paths.get(".").toFile());
+			if(file==null) return listaJuegos;
 			fr = new FileReader(file);
 			br = new BufferedReader(fr);
 			

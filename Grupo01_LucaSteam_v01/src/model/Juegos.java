@@ -19,9 +19,12 @@ public class Juegos {
 		
 	}
 	
-	public Juegos(String nombre, Platforms plataforma, int year, Genre genero, String publisher) {
+	public Juegos(String nombre, Platforms plataforma, int year, Genre genero, String publisher) throws Exception {
 		this.nombre = nombre;
 		this.plataforma = plataforma;
+		if(year<=1958 || year>= 2022) {
+			throw new Exception();
+		}
 		this.year = year;
 		this.genero = genero;
 		this.publisher = publisher;
@@ -35,10 +38,16 @@ public class Juegos {
 			System.out.println(j.toString());
 			return j;
 		}
-		Juegos j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
-							year,Genre.elegirGenero(genero), publisher);
-		
+		Juegos j=new Juegos();
+		try {
+			j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
+								year,Genre.elegirGenero(genero), publisher);
+			return j;
+		} catch (Exception e) {
+			System.out.println("Año incorrecto.");
+		}
 		return j;
+		
 	}
 
 	public String getNombre() {

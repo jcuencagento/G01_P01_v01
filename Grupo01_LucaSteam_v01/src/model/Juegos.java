@@ -21,9 +21,11 @@ public class Juegos {
 	}
 	
 	//ESPECIALISTA CREADOR JUEGOS
-	public static Juegos creadorJuegos(String nombre, String plataforma, String year, String genero, String publisher) {
+	public static Juegos creadorJuegos(String nombre, String plataforma, int year, String genero, String publisher) {
+		
 		Juegos j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
-							Integer.parseInt(year),Genre.elegirGenero(genero), publisher);
+							year,Genre.elegirGenero(genero), publisher);
+		
 		return j;
 	}
 

@@ -16,8 +16,8 @@ public class Servicios implements InterfServicios{
 		lj.listaJuegosInicial();
 	}
 	
-	public void imprimirLista() {
-		
+	public void imprimirListaJuegos() {
+		lj.imprimirListaJuegos();
 	}
 	
 }

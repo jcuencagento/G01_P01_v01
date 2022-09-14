@@ -16,7 +16,7 @@ public class LucaSteam {
 	
 	//MENU PRINCIPAL
 	public void entro() {
-		//serv.listaJuegosInicial();  //METEMOS LOS JUEGOS NADA MAS ENTRAR
+		serv.listaJuegosInicial();  //METEMOS LOS JUEGOS NADA MAS ENTRAR
 		boolean sigue = true;
 		while(sigue) {
 			Menus.menuInicial();

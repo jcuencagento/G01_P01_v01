@@ -1,6 +1,8 @@
 package control;
 
 /**
+ * Clase Main del programa donde se instancia la clase principal de Control y 
+ * se llama al metodo bucle.
  * 
  * @author Grupo1
  *

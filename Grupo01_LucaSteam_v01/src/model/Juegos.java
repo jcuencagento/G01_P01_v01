@@ -31,9 +31,9 @@ public class Juegos {
 	public static Juegos creadorJuegos(String nombre, String plataforma, int year, String genero, String publisher) {
 		//String probar= null;
 		if(nombre == null) {
-			Juegos jv = new Juegos();
-			System.out.println(jv.toString());
-			return jv;
+			Juegos j = new Juegos();
+			System.out.println(j.toString());
+			return j;
 		}
 		Juegos j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
 							year,Genre.elegirGenero(genero), publisher);
@@ -83,7 +83,7 @@ public class Juegos {
 
 	@Override
 	public String toString() {
-		return "Juego de nombre " + nombre + ", de la plataforma " + plataforma + ", del anno " + year + ", del genero "
+		return "Juego de nombre "+ nombre + ", de la plataforma " + plataforma + ", del anno " + year + ", del genero "
 				+ genero + ", y de la editora " + publisher + ".";
 	}
 	

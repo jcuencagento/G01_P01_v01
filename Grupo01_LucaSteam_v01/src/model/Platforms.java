@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Clase principal de Control del proyecto
+ * Archivo de Enum que enumera todas las posibles plataformas de videojuegos y una categoria para desconocidos.
  * 
  * @author Grupo 01
  *
@@ -12,8 +12,7 @@ public enum Platforms {
 	WII, NES, GB, DS, X360, PS3, PS2, SNES, GBA, 
 	PS4, N64, PS, XB, PC, A2600, PSP, XONE, GC, 
 	WIIU, GEN, DC, PSV, SAT, SCD, WS, NG, TG16, GG, PCFX,
-	DS3,
-	DO3;
+	DS3,DO3, DESCONOCIDO;
 	
 	
 	//METODO DONDE PASAR DE STRING A PLATAFORMA (ENUM)
@@ -145,11 +144,8 @@ public enum Platforms {
 			return p;
 		}
 		default:
-			return null;
+			p = Platforms.DESCONOCIDO;
+			return p;
 		}
-		
-	
 	}
-
-
 }

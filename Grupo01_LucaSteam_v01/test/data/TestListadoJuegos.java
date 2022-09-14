@@ -8,9 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Juegos;
-
-import java.util.ArrayList;
 
 
 public class TestListadoJuegos {
@@ -58,6 +55,9 @@ public class TestListadoJuegos {
 	@Test
 	public void testAltaJuegoVacio() {
 		logger.warn("Test::testAltaJuegoVacio(): []");
+		
+		
+		Assert.assertEquals("hola", "hola");
 	}
 	
 	@Test

@@ -1,5 +1,7 @@
 package service;
 
+import model.Genre;
+
 /**
  * Clase principal de Control del proyecto
  * 
@@ -16,6 +18,6 @@ public interface InterfServicios {
 
 	public void altaJuego();
 	
-	public void imprimirListaPorCategoria();
+	public void imprimirListaPorCategoria(Genre g);
 
 }

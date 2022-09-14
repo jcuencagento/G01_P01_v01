@@ -2,10 +2,12 @@ package gui;
 
 
 /**
+ * Interfaz visual, menu principal y dos submenus, el de gestion y el de listados.
  * 
  * @author Grupo1
  *
  */
+
 public class Menus {
 
 	public static void menuInicial() {
@@ -27,8 +29,8 @@ public class Menus {
 		System.out.println("3. Listado juegos de Nintendo.");
 		System.out.println("4. Listado Publishers.");
 		System.out.println("5. Listado todos los juegos del siglo XX.");
-		System.out.println("6. Listado de juegos dependiendo del Genre.");
-		System.out.println("7. Listado todos los juegos de annos pares.");
+		//System.out.println("6. Listado de juegos dependiendo del Genre.");
+		//System.out.println("7. Listado todos los juegos de annos pares.");
 		System.out.println("0. Salir del menu.");
 	}
 

@@ -12,6 +12,14 @@ import model.Juegos;
 
 import java.util.ArrayList;
 
+/**
+ * Test utilidad sacoFichero, solo leemos el archivo .csv
+ * comprobando que pasa con un archivo null o con uno inexistente
+ * mas la prueba con el archivo correcto
+ * 
+ * @author Grupo 01
+ *
+ */
 
 public class TestSacoFichero {
 	

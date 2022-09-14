@@ -1,5 +1,7 @@
 package model;
 
+import javax.sql.rowset.serial.SQLOutputImpl;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
@@ -55,11 +57,69 @@ public class TesterJuegos {
 
 	@Test
 	public void testCreadorJuegoVacio() {
-		logger.warn("Test:: testCreadorJuegoVacio(): null" );
+		logger.info("Test: testCreadorJuegoVacio(): null" );
 		Juegos j1 = new Juegos();	
 		System.out.println(j1.toString());
 		Juegos j2 = Juegos.creadorJuegos(null, null, 0, null, null);
 		Assert.assertEquals(j1.toString(), j2.toString());
+	}
+	
+	//
+	@Test
+	public void testCreadorJuegoCorrecto() {
+		logger.info("Test::testCreadorJuegoCorrecto() ");
+		
+		Juegos j1= new Juegos();
+		try {
+			j1 = new Juegos("Pruega",Platforms.A2600, 14572, Genre.ACCION, "publi");
+		} catch (Exception e) {
+			System.out.println("Año incorrecto");
+		}
+		Juegos j2= Juegos.creadorJuegos("Pruega", "2600", 14572, "Action", "publi");
+		
+		Assert.assertEquals(j1.toString(), j2.toString());
+		logger.info("Ahora viene la comparacion de objetos");
+		Assert.assertNotEquals(j1, j2);
+		
+	}
+	
+	@Test
+	public void testCreadorJuegoEnumsIncorrecto() {
+		logger.info("Test::testCreadorJuegoEnumsIncorrecto() ");
+		
+		Juegos j1=new Juegos();
+		try {
+			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 14572, Genre.DESCONOCIDO, "publi");
+		} catch (Exception e) {
+			System.out.println("año incorrecto");
+		}
+		Juegos j2= Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		
+		Assert.assertEquals(j1.toString(), j2.toString());
+		
+		
+	}
+	
+	
+	//Comprueba que el year esta entre 1960-2022
+	@Test
+	public void testCreadorJuegoYearIncorrecto() {
+		logger.info("Test::testCreadorJuegoYearsIncorrecto() ");
+		Juegos j1= new Juegos();
+		try {
+			 j1= new Juegos("Pruega",Platforms.DESCONOCIDO, 0, Genre.DESCONOCIDO, "publi");
+			
+		} catch (Exception e) {
+			System.out.println("Año incorrecto");
+		}
+		Juegos j2= Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		
+		System.out.println(j1.toString());
+		System.out.println(j2.toString());
+		
+		Assert.assertEquals(j1.getYear(), j2.getYear());
+		
+		
 	}
 	
 }

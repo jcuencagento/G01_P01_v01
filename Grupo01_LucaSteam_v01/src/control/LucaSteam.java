@@ -66,12 +66,14 @@ public class LucaSteam {
 	public boolean eligeOpcionGestion() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion ")) {
+		// ALTA JUEGO
 		case 1:
-			// Alta de juego
+			
 			serv.altaJuego();
 			break;
+		// EDITAR JUEGO
 		case 2:
-			// Editar un juego
+			
 
 			break;
 		// SALIMOS DEL MENU
@@ -86,8 +88,9 @@ public class LucaSteam {
 	public boolean eligeOpcionListados() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion ")) {
+		
+		// LISTADO JUEGOS
 		case 2:
-			// listado de juegos
 			serv.imprimirListaJuegos();
 			break;
 		// SALIMOS DEL MENU

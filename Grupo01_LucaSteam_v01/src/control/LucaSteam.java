@@ -1,11 +1,12 @@
 package control;
 
 import gui.Menus;
+import model.Genre;
 import service.Servicios;
 import util.LecturaDatos;
 
 /**
- * Clase principal de Control del proyecto
+ * Clase principal de Control del proyecto.
  * 
  * @author Grupo 01
  *
@@ -65,20 +66,29 @@ public class LucaSteam {
 	// ELEGIR OPCION EN SUBMENU 1
 	public boolean eligeOpcionGestion() {
 		boolean sigue = true;
-		switch (LecturaDatos.leerInt("Introduce una opcion ")) {
+		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {
 		// ALTA JUEGO
 		case 1:
-			
 			serv.altaJuego();
 			break;
+			
 		// EDITAR JUEGO
 		case 2:
-			
 
 			break;
+			
+		// ELIMINAR JUEGO
+		case 3:
+
+			break;
+			
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;
+			break;
+			
+		default:
+			System.out.println("No es una opcion valida.");
 			break;
 		}
 		return sigue;
@@ -87,22 +97,25 @@ public class LucaSteam {
 	// ELEGIR OPCION EN SUBMENU 2
 	public boolean eligeOpcionListados() {
 		boolean sigue = true;
-		switch (LecturaDatos.leerInt("Introduce una opcion ")) {
+		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {
 		
 		//IMPRIMIR POR PLATAFORMA
 		case 1:
-			serv.imprimirListaPorCategoria();
+			serv.imprimirListaPorCategoria(Genre.PLATAFORMA);
 			break;
 		
 		// LISTADO JUEGOS
 		case 2:
 			serv.imprimirListaJuegos();
 			break;
+			
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;
 			break;
+			
 		default:
+			System.out.println("No es una opcion valida.");
 			break;
 		}
 		return sigue;

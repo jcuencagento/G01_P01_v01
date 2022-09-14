@@ -6,7 +6,8 @@ import model.Juegos;
 import util.LecturaDatos;
 
 /**
- * Clase de tipo Servicios que conecta el Control y los Datos...
+ * Clase de tipo Servicios que conecta el Control y los Datos y toma decisiones y 
+ * funcionalidades apartado de la capa de Datos
  * 
  * @author Grupo 01
  *
@@ -25,18 +26,17 @@ public class Servicios implements InterfServicios {
 	}
 
 	public void altaJuego() {
-		Juegos j = Juegos.creadorJuegos(LecturaDatos.leerString("Introduce el nombre "),
-				LecturaDatos.leerString("Introduce la platafoma "),
-				LecturaDatos.leerInt("Introduce el año "),
-				LecturaDatos.leerString("Introduce genero "),
-				LecturaDatos.leerString("Introduce publisher "));
+		Juegos j = Juegos.creadorJuegos(LecturaDatos.leerString("Introduce el nombre: "),
+				LecturaDatos.leerString("Introduce la platafoma: "),
+				LecturaDatos.leerInt("Introduce el año: "),
+				LecturaDatos.leerString("Introduce el genero: "),
+				LecturaDatos.leerString("Introduce el publisher: "));
 		lj.altaJuego(j);
 	}
 
 
-	public void imprimirListaPorCategoria() {
-		lj.imprimirListaPorCategoria(Genre.PLATAFORMA);
-		
+	public void imprimirListaPorCategoria(Genre g) {
+		lj.imprimirListaPorCategoria(g);
 	}
 
 }

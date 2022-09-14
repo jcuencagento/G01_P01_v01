@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * Archivo de Enum que enumera todos los posibles generos de videojuegos y una categoria para desconocidos.
  * 
  * @author Grupo1
  *
@@ -11,12 +12,10 @@ public enum Genre {
 	PLATAFORMA, ACCION, ROL, 
 	AVENTURA, LUCHA, DEPORTE, 
 	MISC, SHOOTER, ESTRATEGIA, 
-	PUZLE, CARRERAS, SIMULACION;
+	PUZLE, CARRERAS, SIMULACION,
+	DESCONOCIDO;
 	
 	
-	/**
-	 * Aqui se explica que hace el metodo
-	 */
 	//METODO DONDE PASAR DE STRING A GENERO (ENUM)
 	public static Genre elegirGenero(String s){
 		Genre g = null;
@@ -82,7 +81,8 @@ public enum Genre {
 			
 		}
 		default:
-			return null;
+			g = Genre.DESCONOCIDO;
+			return g;
 		}
 	}
 }

@@ -1,6 +1,9 @@
 package data;
 
 /**
+ * Clase de Datos la cual crea una lista de juegos (inicialmente con el .csv) y
+ * a partir de ahi va accediendo a ella, bien sea para modificarla o simplemente
+ * para imprimirla por pantalla.
  * 
  * @author Grupo1
  *

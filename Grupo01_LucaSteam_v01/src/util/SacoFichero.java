@@ -18,10 +18,6 @@ import model.Juegos;
  *
  */
 
-//Paths.get(csvFile).toFile().getName())
-
-
-
 public class SacoFichero {
 	
 	public static File buscar(String archivoABuscar, File directorio) {
@@ -57,7 +53,6 @@ public class SacoFichero {
 			line=br.readLine();
 			while((line=br.readLine())!=null) {
 				String[] datos = line.split(cvsSplitBy);
-				//System.out.println("Nombre:"+datos[1]+". Plat:"+datos[2]+". Year:"+datos[3]+". Genre:"+datos[4]+". Publisher:"+datos[5]);
 																//ENUM	    INT		ENUM	
 				try{
 					listaJuegos.add(Juegos.creadorJuegos(datos[1],datos[2],Integer.parseInt(datos[3]),datos[4],datos[5]));

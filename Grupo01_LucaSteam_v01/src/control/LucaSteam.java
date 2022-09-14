@@ -27,7 +27,7 @@ public class LucaSteam {
 		}
 	}
 
-	// ELEGIR OPCION EN MENU PRINCIAL
+	// ELEGIR OPCION EN MENU INICIAL
 	public boolean eligeOpcion() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {

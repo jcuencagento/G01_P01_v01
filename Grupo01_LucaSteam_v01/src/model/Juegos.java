@@ -29,7 +29,12 @@ public class Juegos {
 	
 	//ESPECIALISTA CREADOR JUEGOS
 	public static Juegos creadorJuegos(String nombre, String plataforma, int year, String genero, String publisher) {
-		
+		//String probar= null;
+		if(nombre == null) {
+			Juegos jv = new Juegos();
+			System.out.println(jv.toString());
+			return jv;
+		}
 		Juegos j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
 							year,Genre.elegirGenero(genero), publisher);
 		

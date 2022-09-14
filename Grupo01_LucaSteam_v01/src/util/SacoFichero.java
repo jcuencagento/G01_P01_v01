@@ -18,7 +18,7 @@ import model.Juegos;
 
 public class SacoFichero {
 	public static ArrayList<Juegos> extraigoJuegosdeCSV() {
-		String csvFile = "archivo.csv"; 							//ARCHIVO CSV GUARDADO EN ESTA MISMA CARPETA
+		String csvFile = "vgsales.csv"; 							//ARCHIVO CSV GUARDADO EN ESTA MISMA CARPETA
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ","; 									//DELIMITADOR

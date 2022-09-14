@@ -36,7 +36,7 @@ public class Servicios implements InterfServicios {
 
 
 	public void imprimirListaPorCategoria(Genre g) {
-		lj.imprimirListaPorCategoria(g);
+		System.out.println(lj.imprimirListaPorCategoria(g));
 	}
 
 }

@@ -2,6 +2,13 @@ package util;
 
 import java.util.Scanner;
 
+/**
+ * Clase principal de Control del proyecto
+ * 
+ * @author Grupo 01
+ *
+ */
+
 public class LecturaDatos {
 	
 	@SuppressWarnings("resource")

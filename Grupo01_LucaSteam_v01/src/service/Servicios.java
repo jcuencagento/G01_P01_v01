@@ -1,6 +1,7 @@
 package service;
 
 import data.ListadoJuegos;
+import model.Genre;
 import model.Juegos;
 import util.LecturaDatos;
 
@@ -30,6 +31,12 @@ public class Servicios implements InterfServicios {
 				LecturaDatos.leerString("Introduce genero "),
 				LecturaDatos.leerString("Introduce publisher "));
 		lj.altaJuego(j);
+	}
+
+
+	public void imprimirListaPorCategoria() {
+		lj.imprimirListaPorCategoria(Genre.PLATAFORMA);
+		
 	}
 
 }

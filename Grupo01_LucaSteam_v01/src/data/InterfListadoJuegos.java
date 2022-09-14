@@ -1,5 +1,12 @@
 package data;
 
+/**
+ * 
+ * @author Grupo1
+ *
+ */
+
+import model.Genre;
 import model.Juegos;
 
 public interface InterfListadoJuegos {
@@ -11,4 +18,6 @@ public interface InterfListadoJuegos {
 
 	
 	public void altaJuego(Juegos j);
+	
+	public void imprimirListaPorCategoria(Genre g);
 }

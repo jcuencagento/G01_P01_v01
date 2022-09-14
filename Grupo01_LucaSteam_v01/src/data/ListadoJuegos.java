@@ -1,7 +1,14 @@
 package data;
 
+/**
+ * 
+ * @author Grupo1
+ *
+ */
+
 import java.util.ArrayList;
 
+import model.Genre;
 import model.Juegos;
 import util.SacoFichero;
 
@@ -21,6 +28,16 @@ public class ListadoJuegos implements InterfListadoJuegos {
 
 	public void altaJuego(Juegos j) {
 		listaJuegos.add(j);
+	}
+
+	
+	public void imprimirListaPorCategoria(Genre g) {
+		for (Juegos j: listaJuegos) {
+			if(j.getGenero().equals(g)) {
+				System.out.println(j.toString());
+			}
+		}
+		
 	}
 
 }

@@ -10,7 +10,13 @@ public class ListadoJuegos implements InterfListadoJuegos{
 	ArrayList<Juegos> listaJuegos = new ArrayList<Juegos>();
 	
 	public void listaJuegosInicial() {
-		listaJuegos = SacoFichero.extraigoJuegosdeCSV();
+		listaJuegos = SacoFichero.leeFichero("vgsales.csv");
+	}
+	
+	public void imprimirListaJuegos() {
+		for(Juegos j: listaJuegos) {
+			System.out.println(j.toString());
+		}
 	}
 		
 

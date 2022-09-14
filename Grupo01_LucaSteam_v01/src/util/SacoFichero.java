@@ -1,9 +1,11 @@
 package util;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
+import java.io.File;
+
 import java.io.FileReader;
-import java.io.IOException;
+
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import model.Juegos;
@@ -16,33 +18,64 @@ import model.Juegos;
  *
  */
 
+//Paths.get(csvFile).toFile().getName())
+
+
+
 public class SacoFichero {
-	public static ArrayList<Juegos> extraigoJuegosdeCSV() {
-		String csvFile = "vgsales.csv"; 							//ARCHIVO CSV GUARDADO EN ESTA MISMA CARPETA
+	
+	public static File buscar(String archivoABuscar, File directorio) {
+		//DIRECTORIO
+		//Suele ser Paths.get(".").toFile()
+	    File[] archivos = directorio.listFiles();
+	    for (File archivo : archivos) {
+	        if (archivo.getName().equals(archivoABuscar)) {
+	            return archivo;
+	        }
+	        if (archivo.isDirectory()) {
+	            File resultadoRecursion = buscar(archivoABuscar, archivo);
+	            if (resultadoRecursion != null) {
+	                return resultadoRecursion;
+	            }
+	        }
+	    }
+	    return null;
+	}
+	
+	public static ArrayList<Juegos> leeFichero(String archivo) {
+		FileReader fr = null;
 		BufferedReader br = null;
-		String line = "";
-		String cvsSplitBy = ","; 									//DELIMITADOR
+		String cvsSplitBy = ",";
 		ArrayList<Juegos> listaJuegos = new ArrayList<Juegos>(); 	//INSTANCIAMOS UNA LISTA (LA INICIAL)
+		
 		try {
-		    br = new BufferedReader(new FileReader(csvFile));
-		    while ((line = br.readLine()) != null) {  				//LEEMOS TODO EL ARCHIVO CSV              
-		        String[] datos = line.split(cvsSplitBy);
-		       												//ENUM	    INT		ENUM	
-		       listaJuegos.add(Juegos.creadorJuegos(datos[1],datos[2],datos[3],datos[4],datos[5]));
-		    }
-		} catch (FileNotFoundException e) {
-		    e.printStackTrace();									//EXCEPCION CON EL ARCHIVO
-		} catch (IOException e) {					
-		    e.printStackTrace();
+			File file = buscar(archivo, Paths.get(".").toFile());
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			
+			String line=null;
+			line=br.readLine();
+			while((line=br.readLine())!=null) {
+				String[] datos = line.split(cvsSplitBy);
+				//System.out.println("Nombre:"+datos[1]+". Plat:"+datos[2]+". Year:"+datos[3]+". Genre:"+datos[4]+". Publisher:"+datos[5]);
+																//ENUM	    INT		ENUM	
+				try{
+					listaJuegos.add(Juegos.creadorJuegos(datos[1],datos[2],Integer.parseInt(datos[3]),datos[4],datos[5]));
+				}catch(Exception e) {
+					listaJuegos.add(Juegos.creadorJuegos(datos[1],datos[2],0,datos[4],datos[5]));
+				}
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
 		} finally {
-		    if (br != null) {
-		        try {
-		            br.close();
-		        } catch (IOException e) {							//EXCEPCION CON EL BUFFER
-		            e.printStackTrace();
-		        }
-		    }
+			try {
+				if(null!=fr) fr.close();
+			} catch(Exception e2) {
+				e2.printStackTrace();
+			}
 		}
+
 		return listaJuegos;
 	}
+
 }

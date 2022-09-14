@@ -5,7 +5,9 @@ import org.apache.logging.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
+import org.junit.Assert;
 import util.TestSacoFichero;
 
 /**
@@ -57,6 +59,15 @@ public class TesterJuegos {
 		 * Parte de testing
 		 * 
 		 */
-		
+
+		@Test
+		public void testCreadorJuegoVacio() {
+			logger.warn("Test: testCreadorJuegoVacio(): null" );
+			Juegos j1 = new Juegos();	
+			System.out.println(j1.toString());
+			Juegos j2 = Juegos.creadorJuegos(null, null, 0, null, null);
+			//Assert.assertNotEquals(j1, j2);
+			Assert.assertEquals(j1.toString(), j2.toString());
+		}
 	
 }

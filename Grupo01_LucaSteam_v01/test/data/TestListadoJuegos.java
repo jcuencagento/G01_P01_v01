@@ -148,9 +148,13 @@ public class TestListadoJuegos {
 		logger.info("no se imprime nada, como nosotros queremos");
 	}
 	
+	/**
+	 * Test para comprobar que el metodo listarPorPublisher no imprime 
+	 * juegos que no tengan nada en el campo publisher
+	 */
 	@Test
-	public void testListarPorPublisherAlt() {
-		logger.info("Test::testListarPorPublisherAlt():void");
+	public void testListarPorPublisherLlenoNulo() {
+		logger.info("Test::testListarPorPublisherLlenoNulo():void");
 		ListadoJuegos listaJuegos = new ListadoJuegos();
 		logger.warn("Añado un Juego con el Publisher null");
 		Juegos j1= new Juegos();

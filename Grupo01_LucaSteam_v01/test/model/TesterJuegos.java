@@ -1,6 +1,5 @@
 package model;
 
-import javax.sql.rowset.serial.SQLOutputImpl;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,6 +7,9 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import util.ExcepcionJuegoSinNombre;
+import util.ExcepcionYearIncorrecto;
 
 import org.junit.Assert;
 
@@ -58,9 +60,11 @@ public class TesterJuegos {
 	@Test
 	public void testCreadorJuegoVacio() {
 		logger.info("Test: testCreadorJuegoVacio(): null" );
-		Juegos j1 = new Juegos();	
-		System.out.println(j1.toString());
-		Juegos j2 = Juegos.creadorJuegos(null, null, 0, null, null);
+		Juegos j1 = new Juegos();
+		Juegos j2 = new Juegos();
+		try {
+			j2 = Juegos.creadorJuegos(null, null, 0, null, null);
+		} catch (ExcepcionJuegoSinNombre e) {}
 		Assert.assertEquals(j1.toString(), j2.toString());
 	}
 	
@@ -69,13 +73,15 @@ public class TesterJuegos {
 	public void testCreadorJuegoCorrecto() {
 		logger.info("Test::testCreadorJuegoCorrecto() ");
 		
-		Juegos j1= new Juegos();
+		Juegos j1 = new Juegos();
 		try {
 			j1 = new Juegos("Pruega",Platforms.A2600, 14572, Genre.ACCION, "publi");
-		} catch (Exception e) {
-			System.out.println("Año incorrecto");
+		} catch (ExcepcionYearIncorrecto e) {}
+		Juegos j2 = new Juegos();;
+		try {
+			j2 = Juegos.creadorJuegos("Pruega", "2600", 14572, "Action", "publi");
+		} catch (ExcepcionJuegoSinNombre e) {
 		}
-		Juegos j2= Juegos.creadorJuegos("Pruega", "2600", 14572, "Action", "publi");
 		
 		Assert.assertEquals(j1.toString(), j2.toString());
 		logger.info("Ahora viene la comparacion de objetos");
@@ -87,13 +93,14 @@ public class TesterJuegos {
 	public void testCreadorJuegoEnumsIncorrecto() {
 		logger.info("Test::testCreadorJuegoEnumsIncorrecto() ");
 		
-		Juegos j1=new Juegos();
+		Juegos j1 = new Juegos();
 		try {
 			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 14572, Genre.DESCONOCIDO, "publi");
-		} catch (Exception e) {
-			System.out.println("año incorrecto");
-		}
-		Juegos j2= Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		} catch (ExcepcionYearIncorrecto e) {}
+		Juegos j2 = new Juegos();
+		try {
+			j2 = Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		Assert.assertEquals(j1.toString(), j2.toString());
 		
@@ -105,14 +112,18 @@ public class TesterJuegos {
 	@Test
 	public void testCreadorJuegoYearIncorrecto() {
 		logger.info("Test::testCreadorJuegoYearsIncorrecto() ");
-		Juegos j1= new Juegos();
+		Juegos j1 = new Juegos();
 		try {
 			 j1= new Juegos("Pruega",Platforms.DESCONOCIDO, 0, Genre.DESCONOCIDO, "publi");
 			
 		} catch (Exception e) {
 			System.out.println("Año incorrecto");
 		}
-		Juegos j2= Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		Juegos j2 = new Juegos();;
+		try {
+			j2 = Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+		} catch (ExcepcionJuegoSinNombre e) {
+		}
 		
 		System.out.println(j1.toString());
 		System.out.println(j2.toString());

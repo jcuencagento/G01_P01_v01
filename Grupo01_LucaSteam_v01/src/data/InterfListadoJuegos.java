@@ -15,9 +15,8 @@ public interface InterfListadoJuegos {
 	public void listaJuegosInicial();
 	
 	public void imprimirListaJuegos();
-
 	
 	public void altaJuego(Juegos j);
 	
-	public String imprimirListaPorCategoria(Genre g);
+	public void imprimirListaPorCategoria(Genre g);
 }

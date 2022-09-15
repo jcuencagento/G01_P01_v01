@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 
+
 /**
  * Test de Servicios con la clase Servicios que tiene los metodos provenientes
  * del Control y que posteriormente llamaran a Datos tras manejar (o no) diferentes
@@ -63,8 +64,8 @@ public class TestServicios {
 	
 	
 	@Test  
-	public void test(){  
+	public void testImprimirCategoriaNula(){  
 		logger.info("Test:: ");
-		Assert.assertNotEquals(true, false);
+		Assert.assertEquals(true, false);
 	}  
 }

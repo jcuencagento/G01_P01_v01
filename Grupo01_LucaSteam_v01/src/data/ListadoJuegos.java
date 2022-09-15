@@ -104,7 +104,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	}
 
 	/**
-	 * Método que elimina un juego del Arraylist. el juego que se elimina proviene
+	 * Método que elimina un juego del Arraylist. El juego que se elimina proviene
 	 * del parametro 'posicion'
 	 */
 	public void eliminarJuego(int posicion) {

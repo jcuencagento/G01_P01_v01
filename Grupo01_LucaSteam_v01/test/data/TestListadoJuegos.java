@@ -16,6 +16,14 @@ import model.Juegos;
 import model.Platforms;
 import util.ExcepcionJuegoSinNombre;
 
+
+/**
+ * Clase Test de la capa de Datos 
+ * 
+ * @author Grupo 1
+ *
+ */
+
 public class TestListadoJuegos {
 
 	/**
@@ -26,7 +34,6 @@ public class TestListadoJuegos {
 	private static byte cont = 1;
 	private static Logger logger;
 
-	// Inicializo
 	static {
 		try {
 			logger = LogManager.getLogger(TestListadoJuegos.class);
@@ -57,6 +64,11 @@ public class TestListadoJuegos {
 	 * 
 	 */
 
+	/**
+	 * Introducimos a altaJuego un juego vacio (va a ser vacio por el year incorrecto)
+	 * y comprobamos que una lista vacia y una queriendo sumar un juego vacio es lo mismo.
+	 * 
+	 */
 	@Test
 	public void testAltaJuegoVacio() {
 		logger.warn("Test::testAltaJuegoVacio(): []");
@@ -71,20 +83,28 @@ public class TestListadoJuegos {
 		Assert.assertEquals(listaJuegos1.listaJuegos, listaJuegos2.listaJuegos);
 	}
 
+	/**
+	 * Introducimos un juego correcto en la lista y comprobamos que se da de alta.
+	 * 
+	 */
 	@Test
 	public void testAltaJuegoCorrecto() {
 		logger.info("Test::testAltaJuegoCorrecto(): [Juego de nombre Prueba...]");
 		Juegos j = new Juegos();
 		try {
 			j = Juegos.creadorJuegos("Prueba", "PC", 1999, "Hola", "Publis");
-		} catch (ExcepcionJuegoSinNombre e) {
-		}
+		} catch (ExcepcionJuegoSinNombre e) {}
 		ListadoJuegos listaJuegos1 = new ListadoJuegos();
 		ListadoJuegos listaJuegos2 = new ListadoJuegos();
 		listaJuegos1.altaJuego(j);
 		Assert.assertNotEquals(listaJuegos1.listaJuegos, listaJuegos2.listaJuegos);
 	}
 
+	/**
+	 * Introducimos a imprimirPorNintendo una lista vacia de plataformas y comprobamos
+	 * que no imprime nada y por tanto no da error.
+	 * 
+	 */
 	@Test
 	public void testimprimirListaPorPlataformaNintendoVacia() {
 		ListadoJuegos listaJuegos = new ListadoJuegos();
@@ -95,18 +115,32 @@ public class TestListadoJuegos {
 
 	}
 
-
+	/**
+	 * Introducimos a imprimirPorNintendo una de plataformas correcta y comprobamos
+	 * que imprime el juego introducido como deseamos.
+	 * 
+	 */
 	@Test
 	public void testimprimirListaPorPlataformaNintendoLlena() {
 		ListadoJuegos listaJuegos = new ListadoJuegos();
 		logger.info("Test::testimprimirListaPorPlataformaNintendoLlena(): void");
 		Platforms[] p = { Platforms.DS, Platforms.DS3, Platforms.WII, Platforms.NES, Platforms.SNES, Platforms.GBA,
 				Platforms.WIIU, Platforms.GB, Platforms.N64 };
+		Juegos j = new Juegos();
+		try {
+			j = Juegos.creadorJuegos("Prueba", "DS", 1999, "Hola", "Publis");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		listaJuegos.altaJuego(j);
 		listaJuegos.imprimirListaPorPlataformaNintendo(p);
 		logger.info("Test::testimprimirListaPorPlataformaNintendoLlena(): No hay ningun error");
 
 	}
 
+	/**
+	 * Introducimos a eliminarJuego un juego vacio (previamente "dado de alta"
+	 * y comprobamos que no hace nada.
+	 * 
+	 */
 	@Test
 	public void testborrarJuegoVacio() {
 		ListadoJuegos listaJuegos = new ListadoJuegos();

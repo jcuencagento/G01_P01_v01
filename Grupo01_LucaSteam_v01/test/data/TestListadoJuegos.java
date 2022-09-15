@@ -105,4 +105,30 @@ public class TestListadoJuegos {
 		logger.info("Test::testimprimirListaPorPlataformaNintendoLlena(): No hay ningun error");
 		
 	}
+	
+	@Test
+	public void testEditarJuegoVacio() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testEditarJuegoVacio(): void");
+		Juegos j = new Juegos();
+		listaJuegos.listaJuegos.add(j);
+		//Editamos nombre
+		listaJuegos.editarJuego(1, listaJuegos.listaJuegos.indexOf(j));
+		Assert.assertNotEquals(j.getNombre(), null);
+	}
+	
+	@Test
+	public void testEditarJuegoLleno() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testEditarJuegoLleno(): void");
+		Juegos j = new Juegos();
+		try {
+			j = Juegos.creadorJuegos("Worms", "PC", 1995, "Strategy", "Microsoft");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		listaJuegos.listaJuegos.add(j);
+		//Editamos nombre
+		listaJuegos.editarJuego(1, listaJuegos.listaJuegos.indexOf(j));
+		Assert.assertNotEquals(j.getNombre(), "Worms");
+	}
+	
 }

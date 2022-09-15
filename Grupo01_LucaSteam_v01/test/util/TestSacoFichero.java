@@ -57,7 +57,6 @@ public class TestSacoFichero {
 		logger.info(">>> Terminado las pruebas");
 	}
 
-
 	/**
 	 * Parte testing
 	 * 

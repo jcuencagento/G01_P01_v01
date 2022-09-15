@@ -17,5 +17,6 @@ public class Main {
 		ls.entro();
 		System.out.println("Te despedimos del administrador de LucaSteam!");
 	}
+	
 }
 

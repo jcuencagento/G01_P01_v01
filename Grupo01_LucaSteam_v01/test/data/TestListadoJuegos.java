@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Genre;
 import model.Juegos;
+import util.ExcepcionJuegoSinNombre;
 
 
 
@@ -58,36 +58,28 @@ public class TestListadoJuegos {
 	
 	@Test
 	public void testAltaJuegoVacio() {
-		logger.info("Test::testAltaJuegoVacio(): []");
-		Juegos j = Juegos.creadorJuegos("Prueba","PC", 1620, "Hola", "Publis");
+		logger.warn("Test::testAltaJuegoVacio(): []");
+		Juegos j = new Juegos();
+		try {
+			j = Juegos.creadorJuegos("Prueba","PC", 1620, "Hola", "Publis");
+		} catch (ExcepcionJuegoSinNombre e) {}
 		ListadoJuegos listaJuegos1 = new ListadoJuegos();
 		ListadoJuegos listaJuegos2 = new ListadoJuegos();
 		listaJuegos1.altaJuego(j);
 		Assert.assertEquals(listaJuegos1.listaJuegos,listaJuegos2.listaJuegos);
 	}
-
-	/*
-	@Test
-	public void testImprimirListaPorCategoriaVacio() {
-		logger.warn("Test::testImprimirListaPorCategoriaVacio(): []");
-	}	
 	
 	@Test
-	public void testImprimirListaPorCategoriaPlatform() {
-		logger.warn("Test::testImprimirListaPorCategoriaPlatform(): []");
-		Genre g = Genre.PLATAFORMA;
-		new ListadoJuegos().imprimirListaPorCategoria(g);
+	public void testAltaJuegoCorrecto() {
+		logger.info("Test::testAltaJuegoCorrecto(): [Juego de nombre Prueba...]");
+		Juegos j = new Juegos();
+		try {
+			j = Juegos.creadorJuegos("Prueba","PC", 1999, "Hola", "Publis");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		ListadoJuegos listaJuegos1 = new ListadoJuegos();
+		ListadoJuegos listaJuegos2 = new ListadoJuegos();
+		listaJuegos1.altaJuego(j);
+		Assert.assertNotEquals(listaJuegos1.listaJuegos,listaJuegos2.listaJuegos);
 	}
-	
-	@Test
-	public void testImprimirListaPorCategoriaPlataformaIgualAAccion() {
-		logger.warn("Test::testImprimirListaPorCategoriaPlataformaIgualAAccion(): []");
-		Genre gP = Genre.PLATAFORMA;
-		Genre gA = Genre.ACCION;
-		Assert.assertNotEquals(gP,gA);
-		//(ListadoJuegos.imprimirListaPorCategoria(g));
-	}
-	*/
-	
 	
 }

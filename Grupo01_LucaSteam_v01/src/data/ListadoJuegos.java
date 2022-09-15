@@ -34,13 +34,12 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	}
 
 	
-	public String imprimirListaPorCategoria(Genre g) {
+	public void imprimirListaPorCategoria(Genre g) {
 		for (Juegos j: listaJuegos) {
 			if(j.getGenero().equals(g)) {
 				System.out.println(j.toString());
 			}
 		}
-		return null;
 	}
 
 }

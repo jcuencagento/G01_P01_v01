@@ -1,5 +1,8 @@
 package model;
 
+import util.ExcepcionJuegoSinNombre;
+import util.ExcepcionYearIncorrecto;
+
 /**
  * Clase principal de Control del proyecto
  * 
@@ -19,11 +22,11 @@ public class Juegos {
 		
 	}
 	
-	public Juegos(String nombre, Platforms plataforma, int year, Genre genero, String publisher) throws Exception {
+	public Juegos(String nombre, Platforms plataforma, int year, Genre genero, String publisher) throws ExcepcionYearIncorrecto {
 		this.nombre = nombre;
 		this.plataforma = plataforma;
 		if(year<=1958 || year>= 2022) {
-			throw new Exception();
+			throw new ExcepcionYearIncorrecto("Anno incorrecto.");
 		}
 		this.year = year;
 		this.genero = genero;
@@ -31,21 +34,16 @@ public class Juegos {
 	}
 	
 	//ESPECIALISTA CREADOR JUEGOS
-	public static Juegos creadorJuegos(String nombre, String plataforma, int year, String genero, String publisher) {
-		//String probar= null;
+	public static Juegos creadorJuegos(String nombre, String plataforma, int year, String genero, String publisher) throws ExcepcionJuegoSinNombre {
 		if(nombre == null) {
-			Juegos j = new Juegos();
-			System.out.println(j.toString());
-			return j;
+			throw new ExcepcionJuegoSinNombre("Juego sin nombre.");
 		}
 		Juegos j=new Juegos();
 		try {
 			j = new Juegos(nombre, Platforms.elegirPlataforma(plataforma),
 								year,Genre.elegirGenero(genero), publisher);
 			return j;
-		} catch (Exception e) {
-			System.out.println("Año incorrecto.");
-		}
+		} catch (ExcepcionYearIncorrecto e) {}
 		return j;
 		
 	}

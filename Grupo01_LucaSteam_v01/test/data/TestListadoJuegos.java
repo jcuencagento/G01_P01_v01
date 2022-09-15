@@ -151,4 +151,30 @@ public class TestListadoJuegos {
 		listaJuegos.listarPorPublisher();
 		logger.info("No imprime nada porque el campo publisher esta vacio, como esperamos");
 	}
+	
+	@Test
+	public void testEditarJuegoVacio() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testEditarJuegoVacio(): void");
+		Juegos j = new Juegos();
+		listaJuegos.listaJuegos.add(j);
+		//Editamos nombre
+		listaJuegos.editarJuego(1, listaJuegos.listaJuegos.indexOf(j));
+		Assert.assertNotEquals(j.getNombre(), null);
+	}
+	
+	@Test
+	public void testEditarJuegoLleno() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testEditarJuegoLleno(): void");
+		Juegos j = new Juegos();
+		try {
+			j = Juegos.creadorJuegos("Worms", "PC", 1995, "Strategy", "Microsoft");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		listaJuegos.listaJuegos.add(j);
+		//Editamos nombre
+		listaJuegos.editarJuego(1, listaJuegos.listaJuegos.indexOf(j));
+		Assert.assertNotEquals(j.getNombre(), "Worms");
+	}
+	
 }

@@ -24,6 +24,7 @@ public interface InterfListadoJuegos {
 	
 	
 	
+
 	
 	
 	
@@ -31,4 +32,6 @@ public interface InterfListadoJuegos {
 	
 	
 	public void listarPorPublisher();
+
+	public void listarJuegosSigloXX();
 }

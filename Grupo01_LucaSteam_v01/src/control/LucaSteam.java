@@ -111,12 +111,25 @@ public class LucaSteam {
 			
 		// LISTADO JUEGOS NINTENDO
 		case 3:
-
+			serv.imprimirListaPorPlataformaNintendo();
 			break;
 			
+
 		case 4:
 			serv.listarPorPublisher();
 			
+
+			
+			
+			
+			
+			
+			
+		// LISTADO JUEGOS NINTENDO
+		case 5:
+			serv.listarJuegosSigloXX();
+			break;
+
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;

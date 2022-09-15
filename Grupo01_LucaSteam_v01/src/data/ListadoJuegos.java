@@ -15,6 +15,7 @@ import java.util.Set;
 
 import model.Genre;
 import model.Juegos;
+import model.Platforms;
 import util.SacoFichero;
 
 public class ListadoJuegos implements InterfListadoJuegos {
@@ -44,6 +45,23 @@ public class ListadoJuegos implements InterfListadoJuegos {
 		}
 	}
 
+
+
+	public void imprimirListaPorPlataformaNintendo(Platforms[] p) {
+
+		for (int i = 0; i < listaJuegos.size(); i++) {
+			for (int j = 0; j < p.length; j++) {
+				if (listaJuegos.get(i).getPlataforma() == p[j]) {
+					System.out.println(listaJuegos.get(i).toString());
+				}
+			}
+		}
+	}
+
+	
+	
+	
+
 	
 	
 	
@@ -58,6 +76,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	
 	
 	
+
 	public void listarPorPublisher() {
 		Set<String> publishers = new HashSet<>();
 		for (Juegos juegos : listaJuegos) {
@@ -72,4 +91,27 @@ public class ListadoJuegos implements InterfListadoJuegos {
 			System.out.println(cont++ + ".-" + publi);
 		}
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * Un método que devuelve un listado de juegos 
+	 * que lanzaron el sigle XX
+	 */
+	
+	public void listarJuegosSigloXX() {
+		for (Juegos j : listaJuegos) {
+			if (j.getYear()<2000) {
+			System.out.println(j.toString());
+			}
+		} 
+	 }
+
 }
+

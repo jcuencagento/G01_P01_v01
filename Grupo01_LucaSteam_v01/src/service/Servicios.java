@@ -3,6 +3,7 @@ package service;
 import data.ListadoJuegos;
 import model.Genre;
 import model.Juegos;
+import model.Platforms;
 import util.ExcepcionJuegoSinNombre;
 import util.LecturaDatos;
 
@@ -53,6 +54,14 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+
+
+	public void imprimirListaPorPlataformaNintendo() {
+		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
+		
+		lj.imprimirListaPorPlataformaNintendo(p);
+  }
+
 	
 	
 	
@@ -61,15 +70,21 @@ public class Servicios implements InterfServicios {
 	
 	
 	
+
 	
 	
 	
 	
 	
-	@Override
+
 	public void listarPorPublisher() {
 		lj.listarPorPublisher();
 		
+	}
+
+
+	public void listarJuegosSigloXX() {
+		lj.listarJuegosSigloXX();
 	}
 
 }

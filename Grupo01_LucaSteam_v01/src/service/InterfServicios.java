@@ -20,7 +20,7 @@ public interface InterfServicios {
 	
 	public void imprimirListaPorCategoria(Genre g);
 	
-	public void listarPorPublisher();
+	public void listarPublishers();
 
 	public void editarJuego();
 	

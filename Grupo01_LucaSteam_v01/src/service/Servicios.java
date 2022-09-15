@@ -75,8 +75,8 @@ public class Servicios implements InterfServicios {
 	/**
 	 * Imprimimos todas las editoras (unicos)
 	 */
-	public void listarPorPublisher() {
-		lj.listarPorPublisher();
+	public void listarPublishers() {
+		lj.listarPublishers();
 		
 	}
 

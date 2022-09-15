@@ -94,4 +94,15 @@ public class TestListadoJuegos {
 		logger.info("Test::testimprimirListaPorPlataformaNintendoVacia(): No hay ningun error");
 		
 	}
+	
+	@Test
+	public void testimprimirListaPorPlataformaNintendoLlena() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testimprimirListaPorPlataformaNintendoLlena(): void");
+		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,
+				Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
+		listaJuegos.imprimirListaPorPlataformaNintendo(p);
+		logger.info("Test::testimprimirListaPorPlataformaNintendoLlena(): No hay ningun error");
+		
+	}
 }

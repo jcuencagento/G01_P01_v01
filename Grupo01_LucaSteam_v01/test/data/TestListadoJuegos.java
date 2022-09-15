@@ -1,4 +1,6 @@
 package data;
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Genre;
 import model.Juegos;
 import model.Platforms;
 import util.ExcepcionJuegoSinNombre;
@@ -93,5 +96,36 @@ public class TestListadoJuegos {
 		listaJuegos.imprimirListaPorPlataformaNintendo(p);
 		logger.info("Test::testimprimirListaPorPlataformaNintendoVacia(): No hay ningun error");
 		
+	}
+	
+	
+	/**
+	 * Comprobar que el publisher no este vacio
+	 */
+	@Test
+	public void testListarPorPublisherNulo() {
+		logger.info("Test::testListarPorPublisherNulo():void");
+		ListadoJuegos listaJuegos = new ListadoJuegos();
+		logger.warn("Lista de juegos y publishers vacia");
+		listaJuegos.listarPorPublisher();
+		logger.info("no se imprime nada, como nosotros queremos");
+	}
+	
+	@Test
+	public void testListarPorPublisherAlt() {
+		logger.info("Test::testListarPorPublisherAlt():void");
+		ListadoJuegos listaJuegos = new ListadoJuegos();
+		logger.warn("Añado un Juego con el Publisher null");
+		Juegos j1= new Juegos();
+		j1.setNombre("Prueba");
+		j1.setGenero(Genre.DEPORTE);
+		j1.setYear(1999);
+		j1.setPlataforma(Platforms.GB);
+		logger.info("Añado juego al ArrayList");
+		listaJuegos.altaJuego(j1);
+		logger.info("imprimo para comprobar que se ha añadido");
+		listaJuegos.imprimirListaJuegos();
+		listaJuegos.listarPorPublisher();
+		logger.info("No imprime nada porque el campo publisher esta vacio, como esperamos");
 	}
 }

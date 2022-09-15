@@ -19,4 +19,10 @@ public interface InterfListadoJuegos {
 	public void altaJuego(Juegos j);
 	
 	public void imprimirListaPorCategoria(Genre g);
+	
+	
+	
+	
+	
+	public void listarJuegosSigloXX();
 }

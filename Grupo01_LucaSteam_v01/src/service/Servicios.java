@@ -58,5 +58,16 @@ public class Servicios implements InterfServicios {
 		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
 		
 		lj.imprimirListaPorPlataformaNintendo(p);
+  }
+	
+	
+	
+	
+	
+	
+	
+	
+	public void listarJuegosSigloXX() {
+		lj.listarJuegosSigloXX();
 	}
 }

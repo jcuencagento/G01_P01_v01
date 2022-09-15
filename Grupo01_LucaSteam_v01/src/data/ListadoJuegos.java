@@ -56,5 +56,47 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	}
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * Un método que devuelve un listado de juegos 
+	 * que lanzaron el sigle XX
+	 */
+	
+	public void listarJuegosSigloXX() {
+		for (Juegos j : listaJuegos) {
+			if (j.getYear()<2000) {
+			System.out.println(j.toString());
+			}
+		} 
+	 }
 }
 

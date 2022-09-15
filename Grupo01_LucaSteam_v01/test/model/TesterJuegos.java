@@ -75,13 +75,13 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
-			j1 = new Juegos("Pruega",Platforms.A2600, 1999, Genre.ACCION, "publi");
+
+			j1 = new Juegos("Pruega",Platforms.A2600, 2001, Genre.ACCION, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();;
 		try {
-			j2 = Juegos.creadorJuegos("Pruega", "2600", 145172, "Action", "publi");
-		} catch (ExcepcionJuegoSinNombre e) {
-		}
+			j2 = Juegos.creadorJuegos("Pruega", "2600", 2001, "Action", "publi");
+		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		Assert.assertEquals(j1.toString(), j2.toString());
 		logger.info("Ahora viene la comparacion de objetos");
@@ -95,11 +95,12 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
-			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 1999, Genre.DESCONOCIDO, "publi");
+
+			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 1995, Genre.DESCONOCIDO, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();
 		try {
-			j2 = Juegos.creadorJuegos("Pruega", "ggg", 1999, "patatas", "publi");
+			j2 = Juegos.creadorJuegos("Pruega", "ggg", 1995, "patatas", "publi");
 		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		Assert.assertEquals(j1.toString(), j2.toString());
@@ -120,8 +121,7 @@ public class TesterJuegos {
 		Juegos j2 = new Juegos();
 		try {
 			j2 = Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
-		} catch (ExcepcionJuegoSinNombre e) {
-		}
+		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		System.out.println(j1.toString());
 		System.out.println(j2.toString());

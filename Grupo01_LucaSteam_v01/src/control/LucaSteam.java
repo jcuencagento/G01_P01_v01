@@ -16,7 +16,6 @@ public class LucaSteam {
 
 	Servicios serv = new Servicios();
 
-	// MENU PRINCIPAL
 	public void entro() {
 		serv.listaJuegosInicial(); // METEMOS LOS JUEGOS NADA MAS ENTRAR
 		System.out.println("La lista de juegos ha sido creada.");
@@ -27,7 +26,10 @@ public class LucaSteam {
 		}
 	}
 
-	// ELEGIR OPCION EN MENU INICIAL
+	/**
+	 * Elegir opcion en el menu principal
+	 */
+
 	public boolean eligeOpcion() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {
@@ -63,7 +65,10 @@ public class LucaSteam {
 		return sigue;
 	}
 
-	// ELEGIR OPCION EN SUBMENU 1
+	/**
+	 * Elegir opcion en el submenu 1(gestion)
+	 */
+
 	public boolean eligeOpcionGestion() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {
@@ -71,22 +76,22 @@ public class LucaSteam {
 		case 1:
 			serv.altaJuego();
 			break;
-			
+
 		// EDITAR JUEGO
 		case 2:
 			serv.editarJuego();
 			break;
-			
+
 		// ELIMINAR JUEGO
 		case 3:
 			serv.eliminarJuego();
 			break;
-			
+
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;
 			break;
-			
+
 		default:
 			System.out.println("No es una opcion valida.");
 			break;
@@ -94,41 +99,45 @@ public class LucaSteam {
 		return sigue;
 	}
 
-	// ELEGIR OPCION EN SUBMENU 2
+	/**
+	 * Elegir opcion en el submenu 2(listados)
+	 */
+
 	public boolean eligeOpcionListados() {
 		boolean sigue = true;
 		switch (LecturaDatos.leerInt("Introduce una opcion: ")) {
-		
-		//IMPRIMIR POR PLATAFORMA
+
+		// IMPRIMIR POR PLATAFORMA
 		case 1:
 			serv.imprimirListaPorCategoria(Genre.PLATAFORMA);
 			break;
-		
+
 		// LISTADO JUEGOS
 		case 2:
 			serv.imprimirListaJuegos();
 			break;
-			
+
 		// LISTADO JUEGOS NINTENDO
 		case 3:
 			serv.imprimirListaPorPlataformaNintendo();
 			break;
-			
+
 		// LISTADO PUBLISHERS
 		case 4:
 			serv.listarPorPublisher();
-			
-		// LISTADO SIGLO XX
+
+			// LISTADO SIGLO XX
 		case 5:
 			serv.listarJuegosSigloXX();
 			break;
-			
+
 		// LISTADO ELIGIENDO GENERO
 		case 6:
 			Menus.menuGeneros();
-			serv.imprimirListaPorCategoria(Genre.elegirGenero(LecturaDatos.leerString("Introduce el genero que quieras listar.")));
+			serv.imprimirListaPorCategoria(
+					Genre.elegirGenero(LecturaDatos.leerString("Introduce el genero que quieras listar.")));
 			break;
-		//LISTADO POR AÑOS PARES
+		// LISTADO POR AÑOS PARES
 		case 7:
 			serv.listarYearPares();
 			break;
@@ -137,7 +146,7 @@ public class LucaSteam {
 		case 0:
 			sigue = false;
 			break;
-			
+
 		default:
 			System.out.println("No es una opcion valida.");
 			break;

@@ -75,11 +75,11 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
-			j1 = new Juegos("Pruega",Platforms.A2600, 14572, Genre.ACCION, "publi");
+			j1 = new Juegos("Pruega",Platforms.A2600, 2001, Genre.ACCION, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();;
 		try {
-			j2 = Juegos.creadorJuegos("Pruega", "2600", 14572, "Action", "publi");
+			j2 = Juegos.creadorJuegos("Pruega", "2600", 2001, "Action", "publi");
 		} catch (ExcepcionJuegoSinNombre e) {
 		}
 		
@@ -95,11 +95,11 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
-			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 14572, Genre.DESCONOCIDO, "publi");
+			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 1995, Genre.DESCONOCIDO, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();
 		try {
-			j2 = Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
+			j2 = Juegos.creadorJuegos("Pruega", "ggg", 1995, "patatas", "publi");
 		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		Assert.assertEquals(j1.toString(), j2.toString());

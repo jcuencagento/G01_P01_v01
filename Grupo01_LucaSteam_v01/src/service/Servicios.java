@@ -53,4 +53,15 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	public void listarJuegosSigloXX() {
+		lj.listarJuegosSigloXX();
+	}
 }

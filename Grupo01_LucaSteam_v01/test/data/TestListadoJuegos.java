@@ -1,9 +1,6 @@
 package data;
 
-import static org.junit.Assert.assertEquals;
 
-
-import java.util.ArrayList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -98,14 +95,6 @@ public class TestListadoJuegos {
 
 	}
 
-	
-	public void testEliminarJuegoDeUnaListaYCompararSuTamannoConOtra(int posicion) {
-		logger.info("Test::testEliminarJuego(): void");
-		ListadoJuegos listaJuegos1 = new ListadoJuegos();
-		ListadoJuegos listaJuegos2 = new ListadoJuegos();
-		Assert.assertNotEquals(listaJuegos1.listaJuegos.size(), listaJuegos2.listaJuegos.size());
-		logger.info("Test::testEliminarJuego(): Tamanno de lista 1 y lista 2 no son iguales, juego eliminado.");
-	}
 
 	@Test
 	public void testimprimirListaPorPlataformaNintendoLlena() {
@@ -128,6 +117,22 @@ public class TestListadoJuegos {
 		listaJuegos.eliminarJuego(listaJuegos.listaJuegos.size() - 1);
 		Assert.assertEquals(listaJuegos.listaJuegos, listaJuegos1.listaJuegos);
 		logger.info("Test::testborrarJuegoVacio(): void");
+	}
+	
+	@Test
+	public void testEliminarJuegoDeUnaListaYCompararSuTamannoConOtra() {
+		logger.info("Test::testEliminarJuego(): void");
+		ListadoJuegos listaJuegos1 = new ListadoJuegos();
+		ListadoJuegos listaJuegos2 = new ListadoJuegos();
+		Juegos j1 = new Juegos();
+		try {
+			j1 = Juegos.creadorJuegos("Worms", "PC", 1995, "Strategy", "Microsoft");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		listaJuegos1.listaJuegos.add(j1);
+		listaJuegos2.listaJuegos.add(j1);
+		listaJuegos1.eliminarJuego(listaJuegos1.listaJuegos.size()-1);
+		Assert.assertNotEquals(listaJuegos1.listaJuegos.size(), listaJuegos2.listaJuegos.size());
+		logger.info("Test::testEliminarJuego(): Tamanno de lista 1 y lista 2 no son iguales, juego eliminado.");
 	}
 	
 	
@@ -159,6 +164,18 @@ public class TestListadoJuegos {
 		listaJuegos.imprimirListaJuegos();
 		listaJuegos.listarPorPublisher();
 		logger.info("No imprime nada porque el campo publisher esta vacio, como esperamos");
+	}
+	
+	@Test
+	public void testListarPorPublisherLleno() {
+		logger.info("Test::testListarPorPublisherNulo():void");
+		ListadoJuegos listaJuegos = new ListadoJuegos();
+		Juegos j1 = new Juegos();
+		try {
+			j1 = Juegos.creadorJuegos("Worms", "PC", 1995, "Strategy", "Microsoft");
+		} catch (ExcepcionJuegoSinNombre e) {}
+		listaJuegos.listaJuegos.add(j1);
+		listaJuegos.listarPorPublisher();
 	}
 	
 	@Test

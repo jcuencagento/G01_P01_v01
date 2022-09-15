@@ -74,12 +74,12 @@ public class LucaSteam {
 			
 		// EDITAR JUEGO
 		case 2:
-
+			serv.editarJuego();
 			break;
 			
 		// ELIMINAR JUEGO
 		case 3:
-
+			serv.eliminarJuego();
 			break;
 			
 		// SALIMOS DEL MENU

@@ -1,6 +1,7 @@
 package service;
 
 import data.ListadoJuegos;
+import gui.Menus;
 import model.Genre;
 import model.Juegos;
 import model.Platforms;
@@ -54,6 +55,7 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+<<<<<<< Updated upstream
 
 
 	public void imprimirListaPorPlataformaNintendo() {
@@ -62,6 +64,8 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorPlataformaNintendo(p);
   }
 
+=======
+>>>>>>> Stashed changes
 	
 	
 	
@@ -70,12 +74,16 @@ public class Servicios implements InterfServicios {
 	
 	
 	
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 	
 	
 	
 	
 	
+<<<<<<< Updated upstream
 
 	public void listarPorPublisher() {
 		lj.listarPorPublisher();
@@ -87,4 +95,97 @@ public class Servicios implements InterfServicios {
 		lj.listarJuegosSigloXX();
 	}
 
+=======
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void editarJuego() {
+		//Juegos j = new Juegos();
+		int posicion = lj.buscadorJuegos(LecturaDatos.leerString("Introduce el nombre del juego a editar: "));
+		boolean sigue = true;
+		if(posicion == -1) sigue = false;
+		int opcion = 0;
+		while(sigue) {
+			Menus.peticionKey();
+			switch(LecturaDatos.leerInt("Introduce que quiere cambiar del juego: ")) {
+			case 1:
+				opcion = 1;
+				lj.editarJuego(opcion, posicion);
+				break;
+			case 2:
+				opcion = 2;
+				lj.editarJuego(opcion, posicion);
+				break;
+			case 3:
+				opcion = 3;
+				lj.editarJuego(opcion, posicion);
+				break;
+			case 4:
+				opcion = 4;
+				lj.editarJuego(opcion, posicion);
+				break;
+			case 5:
+				opcion = 5;
+				lj.editarJuego(opcion, posicion);
+				break;
+			case 0:
+				sigue = false;
+				System.out.println("Salimos del editor.");
+				break;
+			default:
+				System.out.println("No es una opcion valida.");
+				break;
+			}
+		}
+	}
+	
+	
+	public void eliminarJuego() {
+		int posicion = lj.buscadorJuegos(LecturaDatos.leerString("Introduce el nombre del juego a eliminar: "));
+		if(posicion == -1) return;
+		lj.eliminarJuego(posicion);
+	}
+	
+>>>>>>> Stashed changes
 }

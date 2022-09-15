@@ -28,8 +28,14 @@ public interface InterfServicios {
 	
 	
 	
+<<<<<<< Updated upstream
 	
 	
 	public void listarPorPublisher();
+=======
+	public void editarJuego();
+	
+	public void eliminarJuego();
+>>>>>>> Stashed changes
 
 }

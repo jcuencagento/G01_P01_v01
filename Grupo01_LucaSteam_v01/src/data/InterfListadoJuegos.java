@@ -24,6 +24,7 @@ public interface InterfListadoJuegos {
 	
 	
 	
+<<<<<<< Updated upstream
 
 	
 	
@@ -34,4 +35,13 @@ public interface InterfListadoJuegos {
 	public void listarPorPublisher();
 
 	public void listarJuegosSigloXX();
+=======
+	
+	
+	public void editarJuego(int opcion, int posicion);
+	
+	public void eliminarJuego(int posicion);
+	
+>>>>>>> Stashed changes
 }
+

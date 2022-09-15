@@ -98,6 +98,15 @@ public class TestListadoJuegos {
 
 	}
 
+	
+	public void testEliminarJuegoDeUnaListaYCompararSuTamannoConOtra(int posicion) {
+		logger.info("Test::testEliminarJuego(): void");
+		ListadoJuegos listaJuegos1 = new ListadoJuegos();
+		ListadoJuegos listaJuegos2 = new ListadoJuegos();
+		Assert.assertNotEquals(listaJuegos1.listaJuegos.size(), listaJuegos2.listaJuegos.size());
+		logger.info("Test::testEliminarJuego(): Tamanno de lista 1 y lista 2 no son iguales, juego eliminado.");
+	}
+
 	@Test
 	public void testimprimirListaPorPlataformaNintendoLlena() {
 		ListadoJuegos listaJuegos = new ListadoJuegos();
@@ -176,5 +185,5 @@ public class TestListadoJuegos {
 		listaJuegos.editarJuego(1, listaJuegos.listaJuegos.indexOf(j));
 		Assert.assertNotEquals(j.getNombre(), "Worms");
 	}
-	
+
 }

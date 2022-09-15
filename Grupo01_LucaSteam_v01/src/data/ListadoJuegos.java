@@ -141,6 +141,17 @@ public class ListadoJuegos implements InterfListadoJuegos {
 			}
 		} 
 	 }
-
+	
+	/**
+	 * Un metodo que devuelve los juegos con 
+	 * años pares.
+	 */
+	public void listarYearPares() {
+		for (Juegos j : listaJuegos) {
+			if ((j.getYear()%2) ==0) {
+			System.out.println(j.toString());
+			}
+		}	
+	}
 }
 

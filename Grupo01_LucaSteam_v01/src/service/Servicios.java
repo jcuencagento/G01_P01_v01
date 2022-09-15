@@ -123,4 +123,10 @@ public class Servicios implements InterfServicios {
 		if(posicion == -1) return;
 		lj.eliminarJuego(posicion);
 	}
+
+	@Override
+	public void listarYearPares() {
+		lj.listarYearPares();
+		
+	}
 }

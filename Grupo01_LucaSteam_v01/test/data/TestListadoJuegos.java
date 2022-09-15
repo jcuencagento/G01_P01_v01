@@ -94,4 +94,13 @@ public class TestListadoJuegos {
 		logger.info("Test::testimprimirListaPorPlataformaNintendoVacia(): No hay ningun error");
 		
 	}
+	
+	
+	public void testEliminarJuegoDeUnaListaYCompararSuTamannoConOtra(int posicion) {
+		logger.info("Test::testEliminarJuego(): void");
+		ListadoJuegos listaJuegos1 = new ListadoJuegos();
+		ListadoJuegos listaJuegos2 = new ListadoJuegos();
+		Assert.assertNotEquals(listaJuegos1.listaJuegos.size(), listaJuegos2.listaJuegos.size());
+		logger.info("Test::testEliminarJuego(): Tamanno de lista 1 y lista 2 no son iguales, juego eliminado.");
+	}
 }

@@ -20,10 +20,11 @@ import model.Juegos;
 
 public class SacoFichero {
 	
+	/*
+	 * Metodo complementario para devolver un archivo introduciendo un String con el nombre
+	 */
 	public static File buscar(String archivoABuscar, File directorio) {
-		//DIRECTORIO
-		//Suele ser Paths.get(".").toFile()
-	    File[] archivos = directorio.listFiles();
+	    File[] archivos = directorio.listFiles(); //Suele ser Paths.get(".").toFile()
 	    for (File archivo : archivos) {
 	        if (archivo.getName().equals(archivoABuscar)) {
 	            return archivo;
@@ -38,6 +39,10 @@ public class SacoFichero {
 	    return null;
 	}
 	
+	/*
+	 * Metodo principal para devolver una lista de objetos Juegos provenientes de un fichero .csv
+	 * Utilizando el especialista creadorJuegos e instanciando la clase de datos
+	 */
 	public static ArrayList<Juegos> leeFichero(String archivo) {
 		FileReader fr = null;
 		BufferedReader br = null;

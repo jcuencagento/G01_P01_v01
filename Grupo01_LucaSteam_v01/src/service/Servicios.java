@@ -20,18 +20,23 @@ public class Servicios implements InterfServicios {
 
 	ListadoJuegos lj = new ListadoJuegos();
 
-	//Creamos la lista inicial desde el archivo .csv
+	/**
+	 * Creamos la lista inicial desde el archivo .csv
+	 */
 	public void listaJuegosInicial() {
 		lj.listaJuegosInicial();
 	}
 
-	//Imprimimos todos los juegos
+	/**
+	 * Imprimimos todos los juegos
+	 */
 	public void imprimirListaJuegos() {
 		lj.imprimirListaJuegos();
 	}
 
-	
-	//Damos de alta un juego usando el especialista con entrada por teclado y lo pasamos a datos
+	/**
+	 * Damos de alta un juego usando el especialista con entrada por teclado y lo pasamos a datos
+	 */
 	public void altaJuego() {
 		Juegos j = new Juegos();
 		int year;
@@ -50,25 +55,34 @@ public class Servicios implements InterfServicios {
 		lj.altaJuego(j);
 	}
 
-	//Imprimimos todos los juegos de un genero (Pr. ALTA -> Plataforma)
+	/*
+	 * Imprimimos todos los juegos de un genero (Prioridad ALTA -> Plataforma)
+	 */
 	public void imprimirListaPorCategoria(Genre g) {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+	/*
+	 * Imprimimos todos los juegos de la plataforma Nintendo -> DS3, Wii, GameBoy...
+	 */
 	public void imprimirListaPorPlataformaNintendo() {
 		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,
 				Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
 		
 		lj.imprimirListaPorPlataformaNintendo(p);
-  }
+	}
 
-
+	/*
+	 * Imprimimos todas las editoras (unicos)
+	 */
 	public void listarPorPublisher() {
 		lj.listarPorPublisher();
 		
 	}
 
-
+	/*
+	 * Imprimimos todos los juegos del siglo XX (1958-2000)
+	 */
 	public void listarJuegosSigloXX() {
 		lj.listarJuegosSigloXX();
 	}
@@ -76,7 +90,6 @@ public class Servicios implements InterfServicios {
 	/**
 	 * Metodo editar juego, contiene un submenu para seguir editando todo lo que sea necesario
 	 */
-	
 	public void editarJuego() {
 		//Juegos j = new Juegos();
 		int posicion = lj.buscadorJuegos(LecturaDatos.leerString("Introduce el nombre del juego a editar: "));
@@ -117,14 +130,18 @@ public class Servicios implements InterfServicios {
 		}
 	}
 	
-	
+	/**
+	 * Metodo eliminar juego, recibiendo un String con el nombre del juego en cuestion
+	 */
 	public void eliminarJuego() {
 		int posicion = lj.buscadorJuegos(LecturaDatos.leerString("Introduce el nombre del juego a eliminar: "));
 		if(posicion == -1) return;
 		lj.eliminarJuego(posicion);
 	}
 
-	@Override
+	/*
+	 * Imprimimos todos los juegos de years pares (2020, 2002, 1996...)
+	 */
 	public void listarYearPares() {
 		lj.listarYearPares();
 		

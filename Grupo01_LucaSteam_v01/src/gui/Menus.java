@@ -3,6 +3,7 @@ package gui;
 
 /**
  * Interfaz visual, menu principal y dos submenus, el de gestion y el de listados.
+ * Tambien incorpora un menu para la edicion de juegos y un menu con los generos disponibles
  * 
  * @author Grupo1
  *

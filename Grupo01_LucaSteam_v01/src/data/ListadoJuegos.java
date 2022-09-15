@@ -10,6 +10,8 @@ package data;
  */
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import model.Genre;
 import model.Juegos;
@@ -44,6 +46,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	}
 
 
+
 	public void imprimirListaPorPlataformaNintendo(Platforms[] p) {
 
 		for (int i = 0; i < listaJuegos.size(); i++) {
@@ -58,6 +61,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	
 	
 	
+
 	
 	
 	
@@ -72,12 +76,22 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	
 	
 	
-	
-	
-	
-	
-	
-	
+
+	public void listarPorPublisher() {
+		Set<String> publishers = new HashSet<>();
+		for (Juegos juegos : listaJuegos) {
+			if (juegos.getPublisher() != null) {//el primer valor de la lista contiene valores vacios
+				publishers.add(juegos.getPublisher());
+			}
+		}
+
+		System.out.println("-----Lista de publishers: ------\n");
+		int cont = 0;
+		for (String publi : publishers) {
+			System.out.println(cont++ + ".-" + publi);
+		}
+	}
+
 	
 	
 	
@@ -98,5 +112,6 @@ public class ListadoJuegos implements InterfListadoJuegos {
 			}
 		} 
 	 }
+
 }
 

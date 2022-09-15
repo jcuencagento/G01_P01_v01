@@ -54,11 +54,14 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+
+
 	public void imprimirListaPorPlataformaNintendo() {
 		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
 		
 		lj.imprimirListaPorPlataformaNintendo(p);
   }
+
 	
 	
 	
@@ -67,7 +70,21 @@ public class Servicios implements InterfServicios {
 	
 	
 	
+
+	
+	
+	
+	
+	
+
+	public void listarPorPublisher() {
+		lj.listarPorPublisher();
+		
+	}
+
+
 	public void listarJuegosSigloXX() {
 		lj.listarJuegosSigloXX();
 	}
+
 }

@@ -114,6 +114,11 @@ public class LucaSteam {
 			serv.imprimirListaPorPlataformaNintendo();
 			break;
 			
+
+		case 4:
+			serv.listarPorPublisher();
+			
+
 			
 			
 			
@@ -124,6 +129,7 @@ public class LucaSteam {
 		case 5:
 			serv.listarJuegosSigloXX();
 			break;
+
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;

@@ -19,5 +19,17 @@ public interface InterfServicios {
 	public void altaJuego();
 	
 	public void imprimirListaPorCategoria(Genre g);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void listarPorPublisher();
 
 }

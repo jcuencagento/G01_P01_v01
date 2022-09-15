@@ -1,4 +1,6 @@
 package data;
+import java.util.ArrayList;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.Juegos;
+import model.Platforms;
 import util.ExcepcionJuegoSinNombre;
 
 
@@ -82,4 +85,13 @@ public class TestListadoJuegos {
 		Assert.assertNotEquals(listaJuegos1.listaJuegos,listaJuegos2.listaJuegos);
 	}
 	
+	@Test
+	public void testimprimirListaPorPlataformaNintendoVacia() {
+		ListadoJuegos listaJuegos = new ListadoJuegos ();
+		logger.info("Test::testimprimirListaPorPlataformaNintendoVacia(): void");
+		Platforms[] p= {};
+		listaJuegos.imprimirListaPorPlataformaNintendo(p);
+		logger.info("Test::testimprimirListaPorPlataformaNintendoVacia(): No hay ningun error");
+		
+	}
 }

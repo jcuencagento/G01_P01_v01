@@ -75,13 +75,13 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
+
 			j1 = new Juegos("Pruega",Platforms.A2600, 2001, Genre.ACCION, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();;
 		try {
 			j2 = Juegos.creadorJuegos("Pruega", "2600", 2001, "Action", "publi");
-		} catch (ExcepcionJuegoSinNombre e) {
-		}
+		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		Assert.assertEquals(j1.toString(), j2.toString());
 		logger.info("Ahora viene la comparacion de objetos");
@@ -95,6 +95,7 @@ public class TesterJuegos {
 		
 		Juegos j1 = new Juegos();
 		try {
+
 			j1 = new Juegos("Pruega",Platforms.DESCONOCIDO, 1995, Genre.DESCONOCIDO, "publi");
 		} catch (ExcepcionYearIncorrecto e) {}
 		Juegos j2 = new Juegos();
@@ -116,14 +117,11 @@ public class TesterJuegos {
 		try {
 			 j1= new Juegos("Pruega",Platforms.DESCONOCIDO, 0, Genre.DESCONOCIDO, "publi");
 			
-		} catch (Exception e) {
-			System.out.println("Año incorrecto");
-		}
-		Juegos j2 = new Juegos();;
+		} catch (ExcepcionYearIncorrecto e) {}
+		Juegos j2 = new Juegos();
 		try {
 			j2 = Juegos.creadorJuegos("Pruega", "ggg", 14572, "patatas", "publi");
-		} catch (ExcepcionJuegoSinNombre e) {
-		}
+		} catch (ExcepcionJuegoSinNombre e) {}
 		
 		System.out.println(j1.toString());
 		System.out.println(j2.toString());

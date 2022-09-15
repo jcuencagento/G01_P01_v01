@@ -109,6 +109,11 @@ public class LucaSteam {
 			serv.imprimirListaJuegos();
 			break;
 			
+		// LISTADO JUEGOS NINTENDO
+		case 3:
+
+			break;
+			
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;

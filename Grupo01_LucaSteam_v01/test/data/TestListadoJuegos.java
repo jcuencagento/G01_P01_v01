@@ -61,7 +61,7 @@ public class TestListadoJuegos {
 		logger.warn("Test::testAltaJuegoVacio(): []");
 		Juegos j = new Juegos();
 		try {
-			j = Juegos.creadorJuegos("Prueba","PC", 1620, "Hola", "Publis");
+			j = Juegos.creadorJuegos("Prueba","PC", 1620, "Hola", "Publis"); //Devuelve Juego vacio por la fecha
 		} catch (ExcepcionJuegoSinNombre e) {}
 		ListadoJuegos listaJuegos1 = new ListadoJuegos();
 		ListadoJuegos listaJuegos2 = new ListadoJuegos();

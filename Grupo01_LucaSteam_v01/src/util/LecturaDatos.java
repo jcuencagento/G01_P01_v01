@@ -3,9 +3,9 @@ package util;
 import java.util.Scanner;
 
 /**
- * Clase principal de Control del proyecto
- * 
- * @author Grupo 01
+ * Clase de utilidades de lectura de datos. 
+ * Controla los errores por teclado.
+ * @author Grupo1
  *
  */
 

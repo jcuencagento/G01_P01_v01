@@ -53,4 +53,23 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public void listarPorPublisher() {
+		lj.listarPorPublisher();
+		
+	}
+
 }

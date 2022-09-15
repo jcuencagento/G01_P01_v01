@@ -114,6 +114,9 @@ public class LucaSteam {
 
 			break;
 			
+		case 4:
+			serv.listarPorPublisher();
+			
 		// SALIMOS DEL MENU
 		case 0:
 			sigue = false;

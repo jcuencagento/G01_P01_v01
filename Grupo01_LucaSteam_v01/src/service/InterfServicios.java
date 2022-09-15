@@ -20,22 +20,11 @@ public interface InterfServicios {
 	
 	public void imprimirListaPorCategoria(Genre g);
 	
-	
-	
-	
-	
-	
-	
-	
-	
-<<<<<<< Updated upstream
-	
-	
 	public void listarPorPublisher();
-=======
+
 	public void editarJuego();
 	
 	public void eliminarJuego();
->>>>>>> Stashed changes
+
 
 }

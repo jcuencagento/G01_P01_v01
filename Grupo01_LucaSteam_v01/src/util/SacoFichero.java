@@ -52,6 +52,7 @@ public class SacoFichero {
 			
 			String line=null;
 			line=br.readLine();
+			line=br.readLine();
 			while((line=br.readLine())!=null) {
 				String[] datos = line.split(cvsSplitBy);
 																//ENUM	    INT		ENUM	

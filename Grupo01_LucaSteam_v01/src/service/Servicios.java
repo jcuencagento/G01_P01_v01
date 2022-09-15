@@ -30,7 +30,7 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaJuegos();
 	}
 
-	// v1- podemos hacerlo con try-catch
+	
 	//Damos de alta un juego usando el especialista con entrada por teclado y lo pasamos a datos
 	public void altaJuego() {
 		Juegos j = new Juegos();
@@ -55,35 +55,13 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorCategoria(g);
 	}
 
-<<<<<<< Updated upstream
-
-
 	public void imprimirListaPorPlataformaNintendo() {
-		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
+		Platforms[] p= {Platforms.DS,Platforms.DS3,Platforms.WII,Platforms.NES,
+				Platforms.SNES,Platforms.GBA,Platforms.WIIU,Platforms.GB,Platforms.N64};
 		
 		lj.imprimirListaPorPlataformaNintendo(p);
   }
 
-=======
->>>>>>> Stashed changes
-	
-	
-	
-	
-	
-	
-	
-	
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-	
-	
-	
-	
-	
-<<<<<<< Updated upstream
 
 	public void listarPorPublisher() {
 		lj.listarPorPublisher();
@@ -94,51 +72,10 @@ public class Servicios implements InterfServicios {
 	public void listarJuegosSigloXX() {
 		lj.listarJuegosSigloXX();
 	}
-
-=======
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * Metodo editar juego, contiene un submenu para seguir editando todo lo que sea necesario
+	 */
 	
 	public void editarJuego() {
 		//Juegos j = new Juegos();
@@ -186,6 +123,4 @@ public class Servicios implements InterfServicios {
 		if(posicion == -1) return;
 		lj.eliminarJuego(posicion);
 	}
-	
->>>>>>> Stashed changes
 }

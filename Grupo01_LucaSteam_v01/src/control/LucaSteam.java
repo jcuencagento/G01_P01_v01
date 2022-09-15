@@ -114,20 +114,19 @@ public class LucaSteam {
 			serv.imprimirListaPorPlataformaNintendo();
 			break;
 			
-
+		// LISTADO PUBLISHERS
 		case 4:
 			serv.listarPorPublisher();
 			
-
-			
-			
-			
-			
-			
-			
-		// LISTADO JUEGOS NINTENDO
+		// LISTADO SIGLO XX
 		case 5:
 			serv.listarJuegosSigloXX();
+			break;
+			
+		// LISTADO ELIGIENDO GENERO
+		case 6:
+			Menus.menuGeneros();
+			serv.imprimirListaPorCategoria(Genre.elegirGenero(LecturaDatos.leerString("Introduce el genero que quieras listar.")));
 			break;
 
 		// SALIMOS DEL MENU

@@ -16,10 +16,7 @@ import java.util.Set;
 import model.Genre;
 import model.Juegos;
 import model.Platforms;
-<<<<<<< Updated upstream
-=======
 import util.LecturaDatos;
->>>>>>> Stashed changes
 import util.SacoFichero;
 
 public class ListadoJuegos implements InterfListadoJuegos {
@@ -43,86 +40,13 @@ public class ListadoJuegos implements InterfListadoJuegos {
 
 	public void imprimirListaPorCategoria(Genre g) {
 		for (Juegos j : listaJuegos) {
-			if (j.getGenero().equals(g)) {
-				System.out.println(j.toString());
+			if(j.getGenero()!=null) {
+				if (j.getGenero().equals(g)) {
+					System.out.println(j.toString());
+				}
 			}
 		}
 	}
-	
-	
-	//AILED
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//ANTONIO
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//ELINA
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//JAVI
-	
-	
-	//Metodo editar juego
-
 
 	public void editarJuego(int opcion, int posicion) {
 		
@@ -178,26 +102,6 @@ public class ListadoJuegos implements InterfListadoJuegos {
 		return encontrado;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
 	public void imprimirListaPorPlataformaNintendo(Platforms[] p) {
 
 		for (int i = 0; i < listaJuegos.size(); i++) {
@@ -208,26 +112,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 			}
 		}
 	}
-
 	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 	public void listarPorPublisher() {
 		Set<String> publishers = new HashSet<>();
 		for (Juegos juegos : listaJuegos) {
@@ -242,18 +127,11 @@ public class ListadoJuegos implements InterfListadoJuegos {
 			System.out.println(cont++ + ".-" + publi);
 		}
 	}
-
-	
-	
-	
-	
-	
-	
-	
 	
 	/**
 	 * Un método que devuelve un listado de juegos 
-	 * que lanzaron el sigle XX
+	 * que lanzaron el siglo XX
+	 * 
 	 */
 	
 	public void listarJuegosSigloXX() {

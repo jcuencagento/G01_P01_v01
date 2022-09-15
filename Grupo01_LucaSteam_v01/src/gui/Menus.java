@@ -54,6 +54,15 @@ public class Menus {
 		System.out.println("5. Cambiar publisher.");
 		System.out.println("0. Nada mas.");
 	}
+	
+	public static void menuGeneros() {
+		System.out.println("");
+		System.out.println("Generos de juego disponibles: ");
+		System.out.println("Platform, Fighting, Misc, Simulation");
+		System.out.println("Action, Role-Playing, Strategy");
+		System.out.println("Adventure, Sports, Shooter, Racing...");
+		System.out.println("Cualquier otro es catalogado como desconocido");
+	}
 
 }
 

@@ -26,5 +26,5 @@ public interface InterfServicios {
 	
 	public void eliminarJuego();
 
-
+	public void listarYearPares();
 }

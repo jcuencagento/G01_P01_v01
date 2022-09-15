@@ -27,5 +27,7 @@ public interface InterfListadoJuegos {
 	
 	public void eliminarJuego(int posicion);
 	
+	public void listarYearPares();
+	
 }
 

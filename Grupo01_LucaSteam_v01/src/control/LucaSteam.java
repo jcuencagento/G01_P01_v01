@@ -128,6 +128,10 @@ public class LucaSteam {
 			Menus.menuGeneros();
 			serv.imprimirListaPorCategoria(Genre.elegirGenero(LecturaDatos.leerString("Introduce el genero que quieras listar.")));
 			break;
+		//LISTADO POR AÑOS PARES
+		case 7:
+			serv.listarYearPares();
+			break;
 
 		// SALIMOS DEL MENU
 		case 0:

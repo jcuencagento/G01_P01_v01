@@ -39,7 +39,7 @@ public class Menus {
 		System.out.println("4. Listado Publishers.");
 		System.out.println("5. Listado todos los juegos del siglo XX.");
 		System.out.println("6. Listado de juegos dependiendo del Genre.");
-		//System.out.println("7. Listado todos los juegos de annos pares.");
+		System.out.println("7. Listado todos los juegos de años pares.");
 		System.out.println("0. Salir del menu.");
 		System.out.println("-----------------");
 	}

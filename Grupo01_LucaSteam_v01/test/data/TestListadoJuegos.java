@@ -178,7 +178,7 @@ public class TestListadoJuegos {
 		logger.info("Test::testListarPorPublisherNulo():void");
 		ListadoJuegos listaJuegos = new ListadoJuegos();
 		logger.warn("Lista de juegos y publishers vacia");
-		listaJuegos.listarPorPublisher();
+		listaJuegos.listarPublishers();
 		logger.info("no se imprime nada, como nosotros queremos");
 	}
 	
@@ -200,7 +200,7 @@ public class TestListadoJuegos {
 		listaJuegos.altaJuego(j1);
 		logger.info("imprimo para comprobar que se ha añadido");
 		listaJuegos.imprimirListaJuegos();
-		listaJuegos.listarPorPublisher();
+		listaJuegos.listarPublishers();
 		logger.info("No imprime nada porque el campo publisher esta vacio, como esperamos");
 	}
 	
@@ -213,7 +213,7 @@ public class TestListadoJuegos {
 			j1 = Juegos.creadorJuegos("Worms", "PC", 1995, "Strategy", "Microsoft");
 		} catch (ExcepcionJuegoSinNombre e) {}
 		listaJuegos.listaJuegos.add(j1);
-		listaJuegos.listarPorPublisher();
+		listaJuegos.listarPublishers();
 	}
 	
 	@Test

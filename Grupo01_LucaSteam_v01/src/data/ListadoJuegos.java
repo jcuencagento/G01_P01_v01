@@ -154,9 +154,12 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	 * Método que muestra solo el dato publisher de cada juego Se utiliza un HashSet
 	 * que solo admite valores unicos, descartando asi los duplicados. Imprime por
 	 * pantalla los valores del HashSet.
+	 * @author Antony
+	 * @param null
+	 * @return void
 	 */
 
-	public void listarPorPublisher() {
+	public void listarPublishers() {
 		Set<String> publishers = new HashSet<>();
 		for (Juegos juegos : listaJuegos) {
 			if (juegos.getPublisher() != null) {// el primer valor de la lista contiene valores vacios

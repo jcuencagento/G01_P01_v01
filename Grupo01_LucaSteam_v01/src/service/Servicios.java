@@ -55,14 +55,14 @@ public class Servicios implements InterfServicios {
 		lj.altaJuego(j);
 	}
 
-	/*
+	/**
 	 * Imprimimos todos los juegos de un genero (Prioridad ALTA -> Plataforma)
 	 */
 	public void imprimirListaPorCategoria(Genre g) {
 		lj.imprimirListaPorCategoria(g);
 	}
 
-	/*
+	/**
 	 * Imprimimos todos los juegos de la plataforma Nintendo -> DS3, Wii, GameBoy...
 	 */
 	public void imprimirListaPorPlataformaNintendo() {
@@ -72,7 +72,7 @@ public class Servicios implements InterfServicios {
 		lj.imprimirListaPorPlataformaNintendo(p);
 	}
 
-	/*
+	/**
 	 * Imprimimos todas las editoras (unicos)
 	 */
 	public void listarPorPublisher() {
@@ -80,7 +80,7 @@ public class Servicios implements InterfServicios {
 		
 	}
 
-	/*
+	/**
 	 * Imprimimos todos los juegos del siglo XX (1958-2000)
 	 */
 	public void listarJuegosSigloXX() {
@@ -139,7 +139,7 @@ public class Servicios implements InterfServicios {
 		lj.eliminarJuego(posicion);
 	}
 
-	/*
+	/**
 	 * Imprimimos todos los juegos de years pares (2020, 2002, 1996...)
 	 */
 	public void listarYearPares() {

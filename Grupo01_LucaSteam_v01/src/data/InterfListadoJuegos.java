@@ -8,6 +8,7 @@ package data;
 
 import model.Genre;
 import model.Juegos;
+import model.Platforms;
 
 public interface InterfListadoJuegos {
 	
@@ -27,5 +28,6 @@ public interface InterfListadoJuegos {
 	
 	public void eliminarJuego(int posicion);
 	
+	public void imprimirListaPorPlataformaNintendo(Platforms[] p);
 }
 

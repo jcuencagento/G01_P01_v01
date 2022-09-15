@@ -204,6 +204,10 @@ public class TestListadoJuegos {
 		logger.info("No imprime nada porque el campo publisher esta vacio, como esperamos");
 	}
 	
+	/**
+	 * Test para comprobar que el metodo listarPorPublisher imprime 
+	 * la editora de un juego correctamente
+	 */
 	@Test
 	public void testListarPorPublisherLleno() {
 		logger.info("Test::testListarPorPublisherNulo():void");
@@ -216,6 +220,10 @@ public class TestListadoJuegos {
 		listaJuegos.listarPublishers();
 	}
 	
+	/**
+	 * Test para comprobar que el metodo editarJuego puede editar 
+	 * un juego vacio correctamente
+	 */
 	@Test
 	public void testEditarJuegoVacio() {
 		ListadoJuegos listaJuegos = new ListadoJuegos ();
@@ -227,6 +235,10 @@ public class TestListadoJuegos {
 		Assert.assertNotEquals(j.getNombre(), null);
 	}
 	
+	/**
+	 * Test para comprobar que el metodo editarJuego puede editar 
+	 * un juego ya lleno correctamente
+	 */
 	@Test
 	public void testEditarJuegoLleno() {
 		ListadoJuegos listaJuegos = new ListadoJuegos ();

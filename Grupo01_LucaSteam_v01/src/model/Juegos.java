@@ -4,9 +4,14 @@ import util.ExcepcionJuegoSinNombre;
 import util.ExcepcionYearIncorrecto;
 
 /**
- * Clase principal de Control del proyecto
- * 
  * @author Grupo 01
+ * 
+ * Clase de objeto Juegos
+ * Contiene un constructor vacío, un constructor Juegos 
+ * Juego tiene atributos: nombre (String), plataforma (enum), year (int), 
+ *                        genero (enum), publisher (String)
+ * Contiene los métodos getter y setters y 
+ * un método toString() que devuelve una cadena del objeto Juegos
  *
  */
 
@@ -93,7 +98,5 @@ public class Juegos {
 		return "Juego de nombre "+ nombre + ", de la plataforma " + plataforma + ", del anno " + year + ", del genero "
 				+ genero + ", y de la editora " + publisher + ".";
 	}
-	
-	
 
 }

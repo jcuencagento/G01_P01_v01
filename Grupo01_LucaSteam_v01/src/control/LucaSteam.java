@@ -125,6 +125,7 @@ public class LucaSteam {
 		// LISTADO PUBLISHERS
 		case 4:
 			serv.listarPublishers();
+			break;
 
 			// LISTADO SIGLO XX
 		case 5:

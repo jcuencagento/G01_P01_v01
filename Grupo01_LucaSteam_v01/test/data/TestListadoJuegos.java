@@ -210,7 +210,7 @@ public class TestListadoJuegos {
 	 */
 	@Test
 	public void testListarPorPublisherLleno() {
-		logger.info("Test::testListarPorPublisherNulo():void");
+		logger.info("Test::testListarPorPublisherLleno():void");
 		ListadoJuegos listaJuegos = new ListadoJuegos();
 		Juegos j1 = new Juegos();
 		try {

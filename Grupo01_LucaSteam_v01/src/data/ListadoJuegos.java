@@ -166,8 +166,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 				publishers.add(juegos.getPublisher());
 			}
 		}
-
-		System.out.println("-----Lista de publishers: ------\n");
+		System.out.println("-----Lista de publishers: ------");
 		int cont = 0;
 		for (String publi : publishers) {
 			System.out.println(cont++ + ".-" + publi);
@@ -180,7 +179,7 @@ public class ListadoJuegos implements InterfListadoJuegos {
 	 */
 	public void listarJuegosSigloXX() {
 		for (Juegos j : listaJuegos) {
-			if (j.getYear() < 2000) {
+			if (j.getYear() > 1958 && j.getYear() < 2000) {
 				System.out.println(j.toString());
 			}
 		}
